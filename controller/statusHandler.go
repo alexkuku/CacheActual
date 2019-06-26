@@ -11,6 +11,7 @@ type statusHandler struct {
 }
 
 func (h *statusHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	log.Println(r)
 	if r.Method != http.MethodGet {
 		w.WriteHeader(http.StatusMethodNotAllowed)
 		return
